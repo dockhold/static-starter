@@ -1,0 +1,12 @@
+{
+  "name": "static-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A plain HTML/CSS/JS site that deploys to Dockhold with zero config.",
+  "scripts": {
+    "start": "serve -l $PORT ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.3"
+  }
+}
