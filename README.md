@@ -12,23 +12,24 @@ HTTPS URL.
 2. Click the **Deploy to Dockhold** button above, or open
    [app.dockhold.eu/new](https://app.dockhold.eu/new), connect GitHub, and pick
    your repo.
-3. That's it. Dockhold installs dependencies and starts the site for you. Your
-   site goes live at `https://<your-app>.dockhold.app` with HTTPS handled.
+3. That's it. Dockhold builds the included [`Dockerfile`](Dockerfile) and serves
+   the site. It goes live at `https://<your-app>.dockhold.app` with HTTPS
+   handled.
 
 Every later push to your main branch redeploys automatically.
 
 ## How it serves
 
-There's one moving part: the `start` script in
-[`package.json`](package.json).
+There's one moving part, the last line of the [`Dockerfile`](Dockerfile):
 
-```json
-"start": "serve -l $PORT ."
+```dockerfile
+CMD serve -l $PORT .
 ```
 
 `serve` hands out the files in this folder on the port Dockhold assigns
-(`$PORT`). That `$PORT` is the only rule that matters — an app must listen on
-the port the platform gives it, not a hardcoded one.
+(`$PORT`). That `$PORT` is the only rule that matters. An app must listen on the
+port the platform gives it, not a hardcoded one. The `start` script in
+[`package.json`](package.json) runs the same command locally.
 
 ## Make it yours
 
