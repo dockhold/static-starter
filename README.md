@@ -4,7 +4,7 @@ A plain HTML/CSS/JS site that goes live on [Dockhold](https://dockhold.eu) with
 no build step and no config. The fastest "it works" deploy — push it, get an
 HTTPS URL.
 
-[![Deploy to Dockhold](https://img.shields.io/badge/Deploy%20to-Dockhold-2563eb?style=for-the-badge)](https://app.dockhold.eu/new?repo=https://github.com/dockhold/static-starter)
+[![Deploy on Dockhold](https://dockhold.eu/button.svg)](https://app.dockhold.eu/new?repo=https://github.com/dockhold/static-starter&name=static-starter&ref=button)
 
 ## Deploy it
 
@@ -17,6 +17,15 @@ HTTPS URL.
    handled.
 
 Every later push to your main branch redeploys automatically.
+
+## Deploy with your AI tool
+
+Install the Dockhold plugin or MCP server in your AI coding tool
+([setup guide](https://dockhold.eu/docs/recipes/deploy-from-your-ai-tool)), then
+say "put this online" in a folder with this template. The tool signs you in
+through the browser once and reports the URL when the app is live.
+
+Or from a terminal: `npx dockhold login`, then `npx dockhold deploy`.
 
 ## How it serves
 
